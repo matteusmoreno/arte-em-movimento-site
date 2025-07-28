@@ -1,0 +1,82 @@
+/* Estilo da seção Hero (topo do site) */
+.hero {
+    height: 100vh;
+    /* Ocupa a altura inteira da tela */
+
+    /* AQUI ESTÁ A CORREÇÃO: 
+    Substituímos o texto 'URL_DA_SUA_IMAGEM_DE_FUNDO_AQUI' 
+    pelo caminho real da imagem que você colocou na pasta assets/images.
+  */
+    background-image: url('../../assets/images/hero-background.jpg');
+
+    background-size: cover;
+    /* Faz a imagem cobrir toda a área da seção */
+    background-position: center;
+    /* Centraliza a imagem */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    /* Cor do texto que vai sobre a imagem */
+    padding-top: 80px;
+    /* Compensa a altura do header fixo */
+}
+
+/* Camada escura sobre a imagem para melhorar a leitura do texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Fundo preto com 60% de opacidade */
+}
+
+/* Conteúdo de texto que fica sobre a imagem e a camada escura */
+.hero-content {
+    position: relative;
+    /* Garante que o texto fique acima da camada escura */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Botão de chamada para ação (Call to Action) */
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #b82416;
+    /* Um tom de vermelho mais escuro no hover */
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
