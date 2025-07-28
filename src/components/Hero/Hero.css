@@ -1,26 +1,16 @@
 /* Estilo da seção Hero (topo do site) */
 .hero {
     height: 100vh;
-    /* Ocupa a altura inteira da tela */
-
-    /* AQUI ESTÁ A CORREÇÃO: 
-     O caminho agora aponta diretamente para a imagem dentro da pasta 'assets'.
-  */
     background-image: url('../../assets/hero-background.jpg');
-
     background-size: cover;
-    /* Faz a imagem cobrir toda a área da seção */
     background-position: center;
-    /* Centraliza a imagem */
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     color: #fff;
-    /* Cor do texto que vai sobre a imagem */
     padding-top: 80px;
-    /* Compensa a altura do header fixo */
 }
 
 /* Camada escura sobre a imagem para melhorar a leitura do texto */
@@ -30,52 +20,78 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Fundo preto com 60% de opacidade */
+    background: linear-gradient(90deg, rgba(17, 24, 39, 0.85) 0%, rgba(17, 24, 39, 0.6) 50%, rgba(17, 24, 39, 0.2) 100%);
 }
 
 /* Conteúdo de texto que fica sobre a imagem e a camada escura */
 .hero-content {
     position: relative;
-    /* Garante que o texto fique acima da camada escura */
     z-index: 1;
+    max-width: 700px;
 }
 
+/* Estilo do título principal aprimorado */
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: #fff;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-}
-
-/* Botão de chamada para ação (Call to Action) */
-.cta-button {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
+    margin-bottom: 1.5rem;
     font-weight: 700;
-    transition: background-color 0.3s ease;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo do parágrafo aprimorado */
+.hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* MUDANÇA: Estilo do botão atualizado com o degradê */
+.cta-button {
+    /* Aplicando o gradiente como fundo */
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 18px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: none;
+    /* Removemos a borda para um visual mais limpo */
+    background-size: 200% auto;
+    /* Prepara o gradiente para a animação no hover */
 }
 
 .cta-button:hover {
-    background-color: #b82416;
-    /* Um tom de vermelho mais escuro no hover */
+    /* Anima a posição do gradiente no hover para um efeito sutil */
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Media Query para Responsividade */
+
+/* --- Media Queries para Responsividade --- */
 @media (max-width: 768px) {
+    .hero {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
