@@ -1,13 +1,14 @@
 .contact {
     padding: 4rem 0;
     text-align: center;
-    background-color: var(--secondary-color);
-    color: #fff;
+    background-color: var(--surface-color);
+    /* Usando a cor de superfície */
+    color: var(--text-color);
 }
 
 .contact h2,
 .contact h3 {
-    color: #fff;
+    color: var(--heading-color);
 }
 
 .contact-info {
@@ -29,19 +30,20 @@
     font-weight: 700;
     margin: 0.5rem;
     display: inline-block;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    color: #fff;
 }
 
 .contact-button:hover {
     transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .whatsapp {
     background-color: #25D366;
-    color: #fff;
 }
 
 .map {
     background-color: var(--primary-color);
-    color: #fff;
+    /* Botão no rosa do logo */
 }

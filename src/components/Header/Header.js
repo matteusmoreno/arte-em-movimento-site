@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import logo from '../../assets/arte-em-movimento-logo.jpg'; // Importando o logo
+import logo from '../../assets/arte-em-movimento-logo.png'; // Importando o logo
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);

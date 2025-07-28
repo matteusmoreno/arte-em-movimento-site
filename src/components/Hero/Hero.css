@@ -4,10 +4,9 @@
     /* Ocupa a altura inteira da tela */
 
     /* AQUI ESTÁ A CORREÇÃO: 
-    Substituímos o texto 'URL_DA_SUA_IMAGEM_DE_FUNDO_AQUI' 
-    pelo caminho real da imagem que você colocou na pasta assets/images.
+     O caminho agora aponta diretamente para a imagem dentro da pasta 'assets'.
   */
-    background-image: url('../../assets/images/hero-background.jpg');
+    background-image: url('../../assets/hero-background.jpg');
 
     background-size: cover;
     /* Faz a imagem cobrir toda a área da seção */

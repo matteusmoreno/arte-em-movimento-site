@@ -1,6 +1,7 @@
 .services {
     padding: 4rem 0;
-    background-color: var(--light-gray);
+    background-color: var(--background-color);
+    /* Fundo principal escuro */
     text-align: center;
 }
 
@@ -12,19 +13,23 @@
 }
 
 .service-card {
-    background: var(--background-color);
+    background: var(--surface-color);
+    /* Fundo do card mais claro */
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #374151;
+    /* Borda sutil para definir o card */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+    /* Borda fica ciano no hover */
 }
 
 .service-card h3 {
     color: var(--primary-color);
+    /* Título do serviço em rosa */
     margin-bottom: 1rem;
 }

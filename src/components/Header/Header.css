@@ -1,6 +1,8 @@
 .header {
-    background: var(--background-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--surface-color);
+    /* Fundo um pouco mais claro que o principal */
+    /* Trocamos a sombra por uma borda na cor secundária */
+    border-bottom: 1px solid var(--secondary-color);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -16,19 +18,20 @@
 
 .logo {
     height: 60px;
-    /* Ajuste a altura conforme necessário */
 }
 
 .nav-menu a {
     margin: 0 1rem;
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--text-color);
+    /* Cor de texto padrão */
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
+    /* Destaque com o rosa do logo */
 }
 
 .hamburger {
@@ -39,7 +42,8 @@
 .hamburger .line {
     width: 25px;
     height: 3px;
-    background-color: var(--secondary-color);
+    background-color: var(--heading-color);
+    /* Linhas do hamburger em branco */
     margin: 5px 0;
 }
 
@@ -53,8 +57,9 @@
         /* Altura do header */
         left: 0;
         width: 100%;
-        background: var(--background-color);
+        background: var(--surface-color);
         padding: 1rem 0;
+        border-bottom: 1px solid var(--secondary-color);
     }
 
     .nav-menu.active {
