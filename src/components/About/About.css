@@ -2,50 +2,22 @@
 .about {
     padding: 4rem 0;
     background-color: var(--background-color);
-    /* Fundo branco padrão */
 }
 
-/* Container que organiza a imagem e o texto em duas colunas */
+/* Container que organiza o texto e o carrossel */
 .about-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Duas colunas de tamanho igual */
+    grid-template-columns: 1fr;
     gap: 3rem;
-    /* Espaço entre a imagem e o texto */
     align-items: center;
-    /* Alinha verticalmente o conteúdo no centro */
 }
 
-/* Container da imagem. 
-  Não tem mais a imagem de fundo, agora serve apenas para posicionar a tag <img>.
-*/
-.about-image {
-    width: 100%;
-    display: flex;
-    /* Usado para centralizar a imagem caso ela seja menor que o container */
-    align-items: center;
-    justify-content: center;
+/* Container do conteúdo de texto */
+.about-content {
+    order: 2;
+    text-align: left;
 }
 
-/* Estilo para a tag <img> DENTRO do container .about-image.
-  Isso garante que a imagem seja responsiva e bonita.
-*/
-.about-image img {
-    width: 100%;
-    /* A imagem ocupa toda a largura do seu container */
-    height: auto;
-    /* A altura se ajusta automaticamente para manter a proporção */
-    max-height: 450px;
-    /* Impede que a imagem fique alta demais em telas grandes */
-    object-fit: cover;
-    /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 10px;
-    /* Mantém as bordas arredondadas que dão um visual moderno */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    /* Sombra suave para destacar a imagem */
-}
-
-/* Estilo para o container do conteúdo de texto */
 .about-content h2 {
     font-size: 2.5rem;
     color: var(--secondary-color);
@@ -57,18 +29,62 @@
     color: var(--text-color);
 }
 
-/* Media Query para Responsividade */
-/* Em telas com 768px de largura ou menos (tablets e celulares) */
-@media (max-width: 768px) {
+/* MUDANÇA: O container do carrossel agora é a nossa moldura com gradiente */
+.about-image {
+    width: 100%;
+    order: 1;
+    border-radius: 12px;
+    /* Bordas arredondadas para a moldura */
+    padding: 4px;
+    /* Espessura da moldura de gradiente */
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    /* O gradiente */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidade */
+}
+
+/* Ajuste no carrossel para que ele se encaixe DENTRO da moldura */
+.about-image .carousel-root {
+    border-radius: 9px;
+    /* Bordas um pouco menores que a moldura */
+    overflow: hidden;
+}
+
+/* A imagem em si não precisa mais de borda */
+.about-image .carousel .slide img {
+    height: 450px;
+    object-fit: cover;
+    width: 100%;
+    border: none;
+    /* Removemos o contorno anterior */
+}
+
+/* --- Media Query para Responsividade --- */
+
+/* Em telas de computador (largura >= 768px) */
+@media (min-width: 768px) {
     .about-container {
-        /* As colunas deixam de existir e os itens ficam um em cima do outro */
-        grid-template-columns: 1fr;
-        text-align: center;
-        /* Centraliza o texto */
+        grid-template-columns: 1fr 1fr;
     }
 
     .about-content {
-        /* Adiciona uma margem no topo do texto para não colar na imagem */
-        margin-top: 2rem;
+        text-align: left;
+    }
+}
+
+/* Em telas de celular */
+@media (max-width: 767px) {
+
+    .about-content,
+    .about-image {
+        order: 0;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+
+    .about-image .carousel .slide img {
+        height: 300px;
     }
 }
