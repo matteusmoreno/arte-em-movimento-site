@@ -11,8 +11,8 @@ const Contact = () => {
 
     // Link do Google Maps para o endereço
     const mapQuery = "Rua Alfredo Menezes, 212 - Loja 07 - Bacaxá, Saquarema - RJ, 28994-675";
-    const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURI(mapQuery)}&output=embed`;
-    const mapLink = `https://www.google.com/maps?q=${encodeURI(mapQuery)}`;
+    const mapEmbedUrl = `https://www.google.com/maps?q=$${encodeURI(mapQuery)}&output=embed`;
+    const mapLink = `https://www.google.com/maps?q=$${encodeURI(mapQuery)}`;
 
 
     return (
