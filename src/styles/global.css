@@ -1,21 +1,16 @@
-/* Importando uma fonte do Google Fonts para um visual mais moderno */
+/* MUDANÇA: Voltando a importar a 'Dancing Script' */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* O resto do arquivo continua igual */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 :root {
-    /* NOVA PALETA DE CORES - TEMA ESCURO */
     --primary-color: #EC4899;
-    /* Rosa vibrante do seu logo */
     --secondary-color: #14B8A6;
-    /* Ciano/Verde-água do seu logo */
-
     --background-color: #111827;
-    /* Um azul quase preto para o fundo */
     --surface-color: #1F2937;
-    /* Um cinza-azulado escuro para superfícies como cards */
     --text-color: #E5E7EB;
-    /* Um cinza bem claro para textos principais */
     --heading-color: #FFFFFF;
-    /* Branco puro para títulos de destaque */
 }
 
 * {
